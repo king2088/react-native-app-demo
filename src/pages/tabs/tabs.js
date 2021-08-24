@@ -1,25 +1,39 @@
-import React from 'react';
-import { Text, View, Image, StyleSheet } from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeIcon from  '../../../assets/images/home.png'
+import React from 'react'
+import { Image, StyleSheet, Text, View } from 'react-native'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { getHeaderTitle } from '@react-navigation/elements';
+import HomeIcon from '../../../assets/images/home.png'
 import HomeIconActive from '../../../assets/images/home-active.png'
-import MapIcon from  '../../../assets/images/map.png'
-import MapIconActive from  '../../../assets/images/map-active.png'
-import ApiIcon from  '../../../assets/images/api.png'
-import ApiIconActive from  '../../../assets/images/api-active.png'
-import SettingIcon from  '../../../assets/images/setting.png'
-import SettingIconActive from  '../../../assets/images/setting-active.png'
+import MapIcon from '../../../assets/images/map.png'
+import MapIconActive from '../../../assets/images/map-active.png'
+import ApiIcon from '../../../assets/images/api.png'
+import ApiIconActive from '../../../assets/images/api-active.png'
+import SettingIcon from '../../../assets/images/setting.png'
+import SettingIconActive from '../../../assets/images/setting-active.png'
 
-import HomeScreen from '../home/home';
-import MapScreen from '../map/map';
-import ApiScreen from '../api/api';
-import SettingScreen from '../setting/setting';
+// import { MaterialCommunityIcons } from '@expo/vector-icons'; // 可以使用material icons 使用方法
+/**
+<Tab.Screen
+    name="Feed"
+    component={Feed}
+    options={{
+        tabBarLabel: 'Home',
+        tabBarIcon: ({ color, size }) => (
+        <MaterialCommunityIcons name="home" color={color} size={size} />
+        ),
+    }}
+/>
+**/
+
+import HomeScreen from '../home/home'
+import MapScreen from '../map/map'
+import ApiScreen from '../api/api'
+import SettingScreen from '../setting/setting'
+
 
 const Tab = createBottomTabNavigator();
 
-
-
-function Tabs() {
+const Tabs = () => {
     const screenOptionss = ({ route }) => {
         return {
             tabBarIcon: ({ focused, color, size }) => {
@@ -30,9 +44,17 @@ function Tabs() {
                     setting: focused ? SettingIconActive : SettingIcon
                 }
                 //可以返回任何组件
-                return <Image source={icons[(route.name).toLowerCase()]} style={styles.tabIcons}/>
+                return <Image source={icons[(route.name).toLowerCase()]} style={styles.tabIcons} />
             },
             tabBarActiveTintColor: '#1296db',
+            // header部分
+            header: ({ navigation, route, options }) => {
+                const title = getHeaderTitle(options, route.name);
+                console.log('navigation', navigation.canGoBack(), route, options);
+                return <View style={{ padding: 18, backgroundColor: 'red' }}>
+                    <Text style={{fontSize:20}}>{title}</Text>
+                </View>;
+            }
         }
     }
     return (
@@ -47,9 +69,9 @@ function Tabs() {
 
 const styles = StyleSheet.create({
     tabIcons: {
-      width: 28,
-      height: 28,
+        width: 28,
+        height: 28,
     }
-  });
+})
 
 export default Tabs
