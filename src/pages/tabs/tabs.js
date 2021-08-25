@@ -55,10 +55,10 @@ const Tabs = () => {
                 let height = 0
                 // console.log('route.name', route.name);
                 if(route.name == 'Home') {
-                    return <Header title={title} canGoBack={canGoBack} height={height} navigation={navigation}/>;
+                    return <Header title={title} canGoBack={canGoBack} height={height} navigation={navigation} routeName={route.name}/>;
                 }
                 height = 1
-                return <Header title={title} canGoBack={canGoBack} height={height} navigation={navigation}/>;
+                return <Header title={title} canGoBack={canGoBack} height={height} navigation={navigation} routeName={route.name}/>;
             },
         }
     }

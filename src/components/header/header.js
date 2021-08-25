@@ -1,20 +1,28 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 class Header extends Component {
     constructor(props) {
         super(props)
     }
 
     render() {
-        let {navigation, height, title} = this.props
+        let {navigation, height, title, routeName} = this.props
+        console.log('route name', routeName);
         const canGoBack = navigation.canGoBack()
-        let stylebYBackIcon = canGoBack ? styles.headerLeft : styles.headerLeftHidden
+        let styleBackIcon = canGoBack ? styles.textLeft : styles.headerLeftOrRightHidden
+        // console.log(navigation.getState());
+        let styleCodeIcon = routeName.indexOf('Components') > -1 ? styles.textRight : styles.headerLeftOrRightHidden
         return (
             <View style={height == 0 ? styles.no_header : styles.header}>
-                <MaterialIcons name="keyboard-arrow-left" size={30} style={stylebYBackIcon} onPress={()=> {canGoBack ? navigation.goBack() : null}} />
+                <View style={styles.headerLeft}>
+                    <MaterialIcons name="keyboard-arrow-left" size={26} style={styleBackIcon} onPress={()=> {canGoBack ? navigation.goBack() : null}} />
+                </View>
                 <Text style={styles.headerTitle}>{title}</Text>
+                <View style={styles.headerRight}>
+                    <MaterialCommunityIcons name="code-tags" size={26} style={styleCodeIcon} onPress={()=> {canGoBack ? navigation.navigate('CodeShow') : null}} />
+                </View>
             </View>
         )
     };
@@ -35,21 +43,30 @@ const styles = StyleSheet.create({
     },
     headerLeft: {
         flex: 0.2,
-        color: '#fff',
     },
-    headerLeftHidden: {
+    headerLeftOrRightHidden: {
         flex: 0.2,
-        color: '#22c181'
+        color: '#22c181',
+        display: 'none'
     },
     headerTitle: {
         flex: 0.6,
         color: '#fff',
         fontSize:20,
-        textAlign: 'center'
+        textAlign: 'center',
+    },
+    textLeft: {
+        color: '#fff',
+        textAlign: 'left'
+    },
+    textRight: {
+        color: '#fff',
+        textAlign: 'right'
     },
     headerRight: {
         flex: 0.2,
         color: '#fff',
+        textAlign: 'right'
     }
 })
 

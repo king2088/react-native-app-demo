@@ -8,6 +8,7 @@ import Tabs from "../../pages/tabs/tabs";
 import ViewComponents from "../view/view";
 import HomeScreen from "../../pages/home/home";
 import Header from "../header/header";
+import CodeShow from "../showComponentCode/showComponentCode";
 
 const Stack = createStackNavigator();  // creates object for Stack Navigator
 
@@ -35,7 +36,7 @@ export const HomeScreenNavigation = () => {
             const title = getHeaderTitle(options, route.name);
             const canGoBack = navigation.canGoBack()
             let height = 1
-            return <Header title={title} canGoBack={canGoBack} height={height} navigation={navigation}/>;
+            return <Header title={title} canGoBack={canGoBack} height={height} navigation={navigation} routeName={route.name}/>;
         },
     }
 }
@@ -50,6 +51,11 @@ export const HomeScreenNavigation = () => {
         name="ViewComponents"
         component={ViewComponents}
         options={{ title: "组件" }}
+      />
+      <Stack.Screen
+        name="CodeShow"
+        component={CodeShow}
+        options={{ title: "代码" }}
       />
     </Stack.Navigator>
   )
