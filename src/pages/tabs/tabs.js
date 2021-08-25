@@ -2,7 +2,6 @@ import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { getHeaderTitle } from '@react-navigation/elements'
-import { createStackNavigator } from '@react-navigation/stack';
 
 import Header from '../../components/header/header'
 
@@ -56,10 +55,10 @@ const Tabs = () => {
                 let height = 0
                 // console.log('route.name', route.name);
                 if(route.name == 'Home') {
-                    return <Header title={title} canGoBack={canGoBack} height={height}/>;
+                    return <Header title={title} canGoBack={canGoBack} height={height} navigation={navigation}/>;
                 }
                 height = 1
-                return <Header title={title} canGoBack={canGoBack} height={height}/>;
+                return <Header title={title} canGoBack={canGoBack} height={height} navigation={navigation}/>;
             },
         }
     }
