@@ -7,24 +7,27 @@
  */
 
 import React from 'react';
-import type {Node} from 'react';
+import type { Node } from 'react';
 import {
-  SafeAreaView,
   StatusBar,
-  useColorScheme,
+  useColorScheme
 } from 'react-native';
-
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
-import Tabs from './src/pages/tabs/tabs';
+
+import { CustomNavigation } from './src/components/customNavigation/customNavigation'
 
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
+    <SafeAreaProvider>
       <NavigationContainer>
-        <Tabs></Tabs>
+        <StatusBar backgroundColor="#22c181" />
+        <CustomNavigation />
       </NavigationContainer>
+    </SafeAreaProvider>
   );
 };
 
-export default App;
+export default App

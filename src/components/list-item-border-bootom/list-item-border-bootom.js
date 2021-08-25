@@ -2,21 +2,24 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, TouchableHighlight } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-class Item extends Component {
+class ListItem extends Component {
     constructor(props) {
         super(props)
     }
 
-    onPress() {
-
+    onPress(component) {
+        console.log(component)
+        let {navigation} = this.props
+        navigation.navigate(component)
     }
 
     render() {
+        let {title, component} = this.props.data
         return (
-            <TouchableHighlight onPress={this.onPress}>
+            <TouchableHighlight onPress={() => {this.onPress(component)}}>
                 <View style={styles.item}>
                     <View style={styles.titleWrap}>
-                        <Text style={styles.title}>{this.props.title}</Text>
+                        <Text style={styles.title}>{title}</Text>
                     </View>
                     <View style={styles.listIcons}>
                         <MaterialCommunityIcons name="chevron-right" color={'#ddd'} size={20}/>
@@ -40,7 +43,6 @@ const styles = StyleSheet.create({
     },
     listIcons: {
         flex: 0.1,
-        // textAlign: 'right',
         alignItems: 'flex-end'
     },
     title: {
@@ -48,4 +50,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Item
+export default ListItem

@@ -1,7 +1,11 @@
 import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { getHeaderTitle } from '@react-navigation/elements';
+import { getHeaderTitle } from '@react-navigation/elements'
+import { createStackNavigator } from '@react-navigation/stack';
+
+import Header from '../../components/header/header'
+
 import HomeIcon from '../../../assets/images/home.png'
 import HomeIconActive from '../../../assets/images/home-active.png'
 import MapIcon from '../../../assets/images/map.png'
@@ -11,7 +15,7 @@ import ApiIconActive from '../../../assets/images/api-active.png'
 import SettingIcon from '../../../assets/images/setting.png'
 import SettingIconActive from '../../../assets/images/setting-active.png'
 
-// import { MaterialCommunityIcons } from '@expo/vector-icons'; // 可以使用material icons 使用方法
+// import { MaterialCommunityIcons } from 'react-native-vector-icons/MaterialCommunityIcons'; // 可以使用material icons 使用方法
 /**
 <Tab.Screen
     name="Feed"
@@ -24,12 +28,10 @@ import SettingIconActive from '../../../assets/images/setting-active.png'
     }}
 />
 **/
-
-import HomeScreen from '../home/home'
-import MapScreen from '../map/map'
-import ApiScreen from '../api/api'
-import SettingScreen from '../setting/setting'
-
+import MapScreen from "../../pages/map/map";
+import ApiScreen from "../../pages/api/api";
+import SettingScreen from "../../pages/setting/setting";
+import { HomeScreenNavigation } from '../../components/customNavigation/customNavigation';
 
 const Tab = createBottomTabNavigator();
 
@@ -50,16 +52,20 @@ const Tabs = () => {
             // header部分
             header: ({ navigation, route, options }) => {
                 const title = getHeaderTitle(options, route.name);
-                console.log('navigation', navigation.canGoBack(), route, options);
-                return <View style={{ padding: 18, backgroundColor: 'red' }}>
-                    <Text style={{fontSize:20}}>{title}</Text>
-                </View>;
-            }
+                const canGoBack = navigation.canGoBack()
+                let height = 0
+                // console.log('route.name', route.name);
+                if(route.name == 'Home') {
+                    return <Header title={title} canGoBack={canGoBack} height={height}/>;
+                }
+                height = 1
+                return <Header title={title} canGoBack={canGoBack} height={height}/>;
+            },
         }
     }
     return (
-        <Tab.Navigator screenOptions={screenOptionss} initialRouteName="Home">
-            <Tab.Screen name="Home" component={HomeScreen} options={{ tabBarBadge: 3, title: "首页" }} />
+        <Tab.Navigator screenOptions={screenOptionss}>
+            <Tab.Screen name="Home" component={HomeScreenNavigation} options={{ tabBarBadge: 3, title: "首页" }} />
             <Tab.Screen name="Map" component={MapScreen} options={{ title: "地图" }} />
             <Tab.Screen name="Api" component={ApiScreen} options={{ title: "接口" }} />
             <Tab.Screen name="Setting" component={SettingScreen} options={{ title: "设置" }} />
