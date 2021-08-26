@@ -3,7 +3,7 @@ const homeList = [
         title: "基础组件",
         data: [
             {title: "View", component: 'ViewComponents'}, 
-            {title: "Text", component: 'ViewComponents'}, 
+            {title: "Text", component: 'TextComponents'}, 
             {title: "Image", component: 'ViewComponents'}, 
             {title: "TextInput", component: 'ViewComponents'}, 
             {title: "ScrollView", component: 'ViewComponents'}, 

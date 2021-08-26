@@ -5,10 +5,11 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { getHeaderTitle } from '@react-navigation/elements'
 
 import Tabs from "../../pages/tabs/tabs";
-import ViewComponents from "../view/view";
+import ViewComponents from "../homeComponents/ViewComponents/ViewComponents";
 import HomeScreen from "../../pages/home/home";
 import Header from "../header/header";
 import CodeShow from "../showComponentCode/showComponentCode";
+import TextComponents from "../homeComponents/TextComponents/TextComponents";
 
 const Stack = createStackNavigator();  // creates object for Stack Navigator
 
@@ -20,10 +21,11 @@ export const CustomNavigation = () => {
         component={Tabs}
         options={{ headerShown: false }}
       />
-      <Stack.Screen
+      {/* <Stack.Screen
         name="ViewComponents"
         component={ViewComponents}
       />
+       */}
     </Stack.Navigator>
   )
 }
@@ -36,7 +38,7 @@ export const HomeScreenNavigation = () => {
             const title = getHeaderTitle(options, route.name);
             const canGoBack = navigation.canGoBack()
             let height = 1
-            return <Header title={title} canGoBack={canGoBack} height={height} navigation={navigation} routeName={route.name}/>;
+            return <Header title={title.indexOf('Components')>-1 ? '组件' : title} canGoBack={canGoBack} height={height} navigation={navigation} route={route}/>;
         },
     }
 }
@@ -56,6 +58,10 @@ export const HomeScreenNavigation = () => {
         name="CodeShow"
         component={CodeShow}
         options={{ title: "代码" }}
+      />
+      <Stack.Screen
+        name="TextComponents"
+        component={TextComponents}
       />
     </Stack.Navigator>
   )

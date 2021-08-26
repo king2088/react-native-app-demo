@@ -8,8 +8,9 @@ class Header extends Component {
     }
 
     render() {
-        let {navigation, height, title, routeName} = this.props
-        console.log('route name', routeName);
+        let {navigation, height, title, route} = this.props
+        // console.log('route name', routeName);
+        const routeName = route.name
         const canGoBack = navigation.canGoBack()
         let styleBackIcon = canGoBack ? styles.textLeft : styles.headerLeftOrRightHidden
         // console.log(navigation.getState());
@@ -21,7 +22,7 @@ class Header extends Component {
                 </View>
                 <Text style={styles.headerTitle}>{title}</Text>
                 <View style={styles.headerRight}>
-                    <MaterialCommunityIcons name="code-tags" size={26} style={styleCodeIcon} onPress={()=> {canGoBack ? navigation.navigate('CodeShow') : null}} />
+                    <MaterialCommunityIcons name="code-tags" size={26} style={styleCodeIcon} route={route} onPress={()=> {canGoBack ? navigation.navigate('CodeShow', { fileName: routeName }) : null}} />
                 </View>
             </View>
         )

@@ -335,9 +335,17 @@ PODS:
     - React-cxxreact (= 0.65.1)
     - React-jsi (= 0.65.1)
     - React-perflogger (= 0.65.1)
-  - RNScreens (3.5.0):
+  - RNCMaskedView (0.2.6):
+    - React-Core
+  - RNFS (2.18.0):
+    - React
+  - RNGestureHandler (1.10.3):
+    - React-Core
+  - RNScreens (3.6.0):
     - React-Core
     - React-RCTImage
+  - RNVectorIcons (8.1.0):
+    - React-Core
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -394,7 +402,11 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - "RNCMaskedView (from `../node_modules/@react-native-masked-view/masked-view`)"
+  - RNFS (from `../node_modules/react-native-fs`)
+  - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNScreens (from `../node_modules/react-native-screens`)
+  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -472,8 +484,16 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/runtimeexecutor"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNCMaskedView:
+    :path: "../node_modules/@react-native-masked-view/masked-view"
+  RNFS:
+    :path: "../node_modules/react-native-fs"
+  RNGestureHandler:
+    :path: "../node_modules/react-native-gesture-handler"
   RNScreens:
     :path: "../node_modules/react-native-screens"
+  RNVectorIcons:
+    :path: "../node_modules/react-native-vector-icons"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -520,10 +540,14 @@ SPEC CHECKSUMS:
   React-RCTVibration: 92d41c2442e5328cc4d342cd7f78e5876b68bae5
   React-runtimeexecutor: 85187f19dd9c47a7c102f9994f9d14e4dc2110de
   ReactCommon: eafed38eec7b591c31751bfa7494801618460459
-  RNScreens: 01ab149b5dd5c27f5ff26741b1d2bdf2cee1af35
+  RNCMaskedView: d367b2a8df3992114e31b32b091a0c00dc800827
+  RNFS: 3ab21fa6c56d65566d1fb26c2228e2b6132e5e32
+  RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
+  RNScreens: eb0dfb2d6b21d2d7f980ad46b14eb306d2f1062e
+  RNVectorIcons: 31cebfcf94e8cf8686eb5303ae0357da64d7a5a4
   Yoga: aa0cb45287ebe1004c02a13f279c55a95f1572f4
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 2cc17152d27a27664cfef818090cd1f85e74e492
+PODFILE CHECKSUM: c2990dc64b17462516364d8a14ccdd8ebb45e3cf
 
 COCOAPODS: 1.11.0.beta.2
