@@ -1,4 +1,4 @@
-package com.rnapp;
+package com.t.rnapp;
 import android.os.Bundle;
 
 import com.facebook.react.ReactActivity;
