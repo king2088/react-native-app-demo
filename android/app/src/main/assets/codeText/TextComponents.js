@@ -11,22 +11,16 @@ class TextComponents extends Component {
         }
     }
 
-    onPressTitle() {
-        setTitleText("Bird's Nest [pressed]");
-    }
-
     render() {
         return (
-            <View>
-                <Text style={styles.baseText}>
-                <Text style={styles.titleText} onPress={() => {this.onPressTitle}}>
+            <Text style={styles.baseText}>
+                <Text style={styles.titleText}>
                     {this.state.titleText}
                     {"\n"}
                     {"\n"}
                 </Text>
                 <Text numberOfLines={5}>{this.state.bodyText}</Text>
             </Text>
-            </View>
         )
     };
 }
