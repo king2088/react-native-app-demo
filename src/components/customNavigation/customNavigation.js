@@ -37,15 +37,15 @@ export const CustomNavigation = () => {
 export const HomeScreenNavigation = () => {
   const screenOptionss = ({ route }) => {
     return {
-        // header部分
-        header: ({ navigation, route, options }) => {
-            const title = getHeaderTitle(options, route.name);
-            const canGoBack = navigation.canGoBack()
-            let height = 1
-            return <Header title={title.indexOf('Component')>-1 ? '组件' : title} canGoBack={canGoBack} height={height} navigation={navigation} route={route}/>;
-        },
+      // header部分
+      header: ({ navigation, route, options }) => {
+        const title = getHeaderTitle(options, route.name);
+        const canGoBack = navigation.canGoBack()
+        let height = 1
+        return <Header title={title.indexOf('Component') > -1 ? '组件' : title} canGoBack={canGoBack} height={height} navigation={navigation} route={route} />;
+      },
     }
-}
+  }
   return (
     <Stack.Navigator screenOptions={screenOptionss}>
       <Stack.Screen
@@ -75,12 +75,12 @@ export const HomeScreenNavigation = () => {
         name="TextInputComponent"
         component={TextInputComponent}
       />
-      
+
       <Stack.Screen
         name="ScrollViewComponet"
         component={ScrollViewComponent}
       />
-      
+
       <Stack.Screen
         name="StyleSheetComponent"
         component={StyleSheetComponent}
