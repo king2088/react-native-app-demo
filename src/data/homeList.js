@@ -4,8 +4,8 @@ const homeList = [
         data: [
             {title: "View", component: 'ViewComponents'}, 
             {title: "Text", component: 'TextComponents'}, 
-            {title: "Image", component: 'ViewComponents'}, 
-            {title: "TextInput", component: 'ViewComponents'}, 
+            {title: "Image", component: 'ImageComponents'}, 
+            {title: "TextInput", component: 'TextInputComponents'}, 
             {title: "ScrollView", component: 'ViewComponents'}, 
             {title: "StyleSheet", component: 'ViewComponents'}
         ]

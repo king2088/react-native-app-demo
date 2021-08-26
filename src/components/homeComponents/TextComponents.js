@@ -21,13 +21,13 @@ class TextComponents extends Component {
         return (
             <View>
                 <Text style={styles.baseText}>
-                <Text style={styles.titleText} onPress={() => {this.onPressTitle()}}>
-                    {this.state.titleText}
-                    {"\n"}
-                    {"\n"}
+                    <Text style={styles.titleText} onPress={() => { this.onPressTitle() }}>
+                        {this.state.titleText}
+                        {"\n"}
+                        {"\n"}
+                    </Text>
+                    <Text style={styles.content} numberOfLines={5}>{this.state.bodyText}</Text>
                 </Text>
-                <Text style={styles.content} numberOfLines={5}>{this.state.bodyText}</Text>
-            </Text>
             </View>
         )
     };

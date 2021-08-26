@@ -5,11 +5,13 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { getHeaderTitle } from '@react-navigation/elements'
 
 import Tabs from "../../pages/tabs/tabs";
-import ViewComponents from "../homeComponents/ViewComponents/ViewComponents";
+import ViewComponents from "../homeComponents/ViewComponents";
 import HomeScreen from "../../pages/home/home";
 import Header from "../header/header";
 import CodeShow from "../showComponentCode/showComponentCode";
-import TextComponents from "../homeComponents/TextComponents/TextComponents";
+import TextComponents from "../homeComponents/TextComponents";
+import ImageComponents from "../homeComponents/ImageComponents";
+import TextInputComponents from "../homeComponents/TextInputComponents";
 
 const Stack = createStackNavigator();  // creates object for Stack Navigator
 
@@ -62,6 +64,14 @@ export const HomeScreenNavigation = () => {
       <Stack.Screen
         name="TextComponents"
         component={TextComponents}
+      />
+      <Stack.Screen
+        name="ImageComponents"
+        component={ImageComponents}
+      />
+      <Stack.Screen
+        name="TextInputComponents"
+        component={TextInputComponents}
       />
     </Stack.Navigator>
   )
