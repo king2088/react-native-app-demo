@@ -14,19 +14,6 @@ import ApiIconActive from '../../../assets/images/api-active.png'
 import SettingIcon from '../../../assets/images/setting.png'
 import SettingIconActive from '../../../assets/images/setting-active.png'
 
-// import { MaterialCommunityIcons } from 'react-native-vector-icons/MaterialCommunityIcons'; // 可以使用material icons 使用方法
-/**
-<Tab.Screen
-    name="Feed"
-    component={Feed}
-    options={{
-        tabBarLabel: 'Home',
-        tabBarIcon: ({ color, size }) => (
-        <MaterialCommunityIcons name="home" color={color} size={size} />
-        ),
-    }}
-/>
-**/
 import MapScreen from "../../pages/map/map";
 import ApiScreen from "../../pages/api/api";
 import SettingScreen from "../../pages/setting/setting";

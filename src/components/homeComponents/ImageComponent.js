@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, Image, ScrollView } from 'react-native';
-import IMG from '../../../../assets/images/1106041P33764.jpeg';
+import IMG from '../../../assets/images/1106041P33764.jpeg';
 
-class ImageComponents extends Component {
+class ImageComponent extends Component {
 
     constructor(props) {
         super(props)
@@ -42,4 +42,4 @@ const styles = StyleSheet.create({
    }
 })
 
-export default ImageComponents
+export default ImageComponent

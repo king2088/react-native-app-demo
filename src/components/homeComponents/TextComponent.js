@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-class TextComponents extends Component {
+class TextComponent extends Component {
 
     constructor(props) {
         super(props)
@@ -46,4 +46,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default TextComponents
+export default TextComponent

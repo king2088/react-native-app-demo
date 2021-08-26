@@ -2,57 +2,57 @@ const homeList = [
     {
         title: "基础组件",
         data: [
-            {title: "View", component: 'ViewComponents'}, 
-            {title: "Text", component: 'TextComponents'}, 
-            {title: "Image", component: 'ImageComponents'}, 
-            {title: "TextInput", component: 'TextInputComponents'}, 
-            {title: "ScrollView", component: 'ViewComponents'}, 
-            {title: "StyleSheet", component: 'ViewComponents'}
+            {title: "View", component: 'ViewComponent'}, 
+            {title: "Text", component: 'TextComponent'}, 
+            {title: "Image", component: 'ImageComponent'}, 
+            {title: "TextInput", component: 'TextInputComponent'}, 
+            {title: "ScrollView", component: 'ScrollViewComponet'}, 
+            {title: "StyleSheet", component: 'StyleSheetComponent'}
         ]
     },
     {
         title: "交互控件",
         data: [
-            {title: "Button", component: 'ViewComponents'}, 
-            {title: "Picker", component: 'ViewComponents'}, 
-            {title: "Slider", component: 'ViewComponents'}, 
-            {title: "Switch", component: 'ViewComponents'}
+            {title: "Button", component: 'ViewComponent'}, 
+            {title: "Picker", component: 'ViewComponent'}, 
+            {title: "Slider", component: 'ViewComponent'}, 
+            {title: "Switch", component: 'ViewComponent'}
         ]
     },
     {
         title: "列表视图",
         data: [
-            {title: "FlatList", component: 'ViewComponents'}, 
-            {title: "SectionList", component: 'ViewComponents'} 
+            {title: "FlatList", component: 'ViewComponent'}, 
+            {title: "SectionList", component: 'ViewComponent'} 
         ]
     },
     {
         title: "iOS 独有组件",
-        data: [{title: "ActionSheetIOS", component: 'ViewComponents'}]
+        data: [{title: "ActionSheetIOS", component: 'ViewComponent'}]
     },
     {
         title: "Android 独有组件",
         data: [
-            {title: "BackHandler", component: 'ViewComponents'}, 
-            {title: "DrawerLayoutAndroid", component: 'ViewComponents'}, 
-            {title: "PermissionsAndroid", component: 'ViewComponents'}, 
-            {title: "ToastAndroid", component: 'ViewComponents'}
+            {title: "BackHandler", component: 'ViewComponent'}, 
+            {title: "DrawerLayoutAndroid", component: 'ViewComponent'}, 
+            {title: "PermissionsAndroid", component: 'ViewComponent'}, 
+            {title: "ToastAndroid", component: 'ViewComponent'}
         ]
     },
     {
         title: '其他',
         data: [
-            {title: "ActivityIndicator", component: 'ViewComponents'}, 
-            {title: "Alert", component: 'ViewComponents'}, 
-            {title: "Animated", component: 'ViewComponents'}, 
-            {title: "Dimensions", component: 'ViewComponents'}, 
-            {title: "KeyboardAvoidingView", component: 'ViewComponents'}, 
-            {title: "Linking", component: 'ViewComponents'}, 
-            {title: "Modal", component: 'ViewComponents'}, 
-            {title: "PixelRatio", component: 'ViewComponents'}, 
-            {title: "RefreshControl", component: 'ViewComponents'}, 
-            {title: "StatusBar", component: 'ViewComponents'}, 
-            {title: "WebView", component: 'ViewComponents'}
+            {title: "ActivityIndicator", component: 'ViewComponent'}, 
+            {title: "Alert", component: 'ViewComponent'}, 
+            {title: "Animated", component: 'ViewComponent'}, 
+            {title: "Dimensions", component: 'ViewComponent'}, 
+            {title: "KeyboardAvoidingView", component: 'ViewComponent'}, 
+            {title: "Linking", component: 'ViewComponent'}, 
+            {title: "Modal", component: 'ViewComponent'}, 
+            {title: "PixelRatio", component: 'ViewComponent'}, 
+            {title: "RefreshControl", component: 'ViewComponent'}, 
+            {title: "StatusBar", component: 'ViewComponent'}, 
+            {title: "WebView", component: 'ViewComponent'}
         ]
     }
 ]

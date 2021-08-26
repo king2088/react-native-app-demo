@@ -14,7 +14,7 @@ class Header extends Component {
         const canGoBack = navigation.canGoBack()
         let styleBackIcon = canGoBack ? styles.textLeft : styles.headerLeftOrRightHidden
         // console.log(navigation.getState());
-        let styleCodeIcon = routeName.indexOf('Components') > -1 ? styles.textRight : styles.headerLeftOrRightHidden
+        let styleCodeIcon = routeName.indexOf('Component') > -1 ? styles.textRight : styles.headerLeftOrRightHidden
         return (
             <View style={height == 0 ? styles.no_header : styles.header}>
                 <View style={styles.headerLeft}>

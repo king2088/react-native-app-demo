@@ -11,7 +11,7 @@ const HeightTextInput = (props) => {
     );
 }
 
-const TextInputComponents = () => {
+const TextInputComponent = () => {
     const [value, onChangeText] = useState('输入文本内容');
     const [value2, onChangeText2] = useState('输入英文颜色试试看，如：red、blue、#ddd等');
     return (
@@ -45,4 +45,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default TextInputComponents
+export default TextInputComponent
