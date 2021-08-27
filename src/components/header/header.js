@@ -5,24 +5,33 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 class Header extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            styleBackIcon: styles.headerLeftOrRightHidden,
+            styleCodeIcon: styles.headerLeftOrRightHidden,
+        }
+    }
+
+    componentDidMount() {
+        let {navigation, route} = this.props
+        const routeName = route.name
+        const routeIsNotTabsPage = routeName != 'Map' && routeName != 'Api' && routeName != 'Setting'
+        this.setState({
+            styleBackIcon: navigation.canGoBack() && routeIsNotTabsPage ? styles.textLeft : styles.headerLeftOrRightHidden,
+            styleCodeIcon: routeName.indexOf('Component') > -1 ? styles.textRight : styles.headerLeftOrRightHidden,
+        })
     }
 
     render() {
-        let {navigation, height, title, route} = this.props
-        // console.log('route name', routeName);
-        const routeName = route.name
+        let {height, title, navigation, route} = this.props
         const canGoBack = navigation.canGoBack()
-        let styleBackIcon = canGoBack ? styles.textLeft : styles.headerLeftOrRightHidden
-        // console.log(navigation.getState());
-        let styleCodeIcon = routeName.indexOf('Component') > -1 ? styles.textRight : styles.headerLeftOrRightHidden
         return (
             <View style={height == 0 ? styles.no_header : styles.header}>
                 <View style={styles.headerLeft}>
-                    <MaterialIcons name="keyboard-arrow-left" size={26} style={styleBackIcon} onPress={()=> {canGoBack ? navigation.goBack() : null}} />
+                    <MaterialIcons name="keyboard-arrow-left" size={26} style={this.state.styleBackIcon} onPress={()=> {canGoBack ? navigation.goBack() : null}} />
                 </View>
                 <Text style={styles.headerTitle}>{title}</Text>
                 <View style={styles.headerRight}>
-                    <MaterialCommunityIcons name="code-tags" size={26} style={styleCodeIcon} route={route} onPress={()=> {canGoBack ? navigation.navigate('CodeShow', { fileName: routeName }) : null}} />
+                    <MaterialCommunityIcons name="code-tags" size={26} style={this.state.styleCodeIcon} route={route} onPress={()=> {canGoBack ? navigation.navigate('CodeShow', { fileName: route.name }) : null}} />
                 </View>
             </View>
         )

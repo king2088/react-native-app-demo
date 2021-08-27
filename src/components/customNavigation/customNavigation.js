@@ -1,7 +1,7 @@
 // 集成 stack navigation
 import React from "react";
 
-import { createStackNavigator } from "@react-navigation/stack";
+import { createStackNavigator, CardStyleInterpolators } from "@react-navigation/stack";
 import { getHeaderTitle } from '@react-navigation/elements'
 
 import Tabs from "../../pages/tabs/tabs";
@@ -14,6 +14,10 @@ import ImageComponent from "../homeComponents/ImageComponent";
 import TextInputComponent from "../homeComponents/TextInputComponent";
 import ScrollViewComponent from "../homeComponents/ScrollViewComponent";
 import StyleSheetComponent from "../homeComponents/StyleSheetComponent";
+import ButtonComponent from "../homeComponents/ButtonComponent";
+import SwitchComponent from "../homeComponents/SwitchComponent";
+import FlatListComponent from "../homeComponents/FlatListComponent";
+import SectionListComponent from "../homeComponents/SectionListComponent";
 
 const Stack = createStackNavigator();  // creates object for Stack Navigator
 
@@ -44,6 +48,7 @@ export const HomeScreenNavigation = () => {
         let height = 1
         return <Header title={title.indexOf('Component') > -1 ? '组件' : title} canGoBack={canGoBack} height={height} navigation={navigation} route={route} />;
       },
+      cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS
     }
   }
   return (
@@ -84,6 +89,22 @@ export const HomeScreenNavigation = () => {
       <Stack.Screen
         name="StyleSheetComponent"
         component={StyleSheetComponent}
+      />
+      <Stack.Screen
+        name="ButtonComponent"
+        component={ButtonComponent}
+      />
+      <Stack.Screen
+        name="SwitchComponent"
+        component={SwitchComponent}
+      />
+      <Stack.Screen
+        name="FlatListComponent"
+        component={FlatListComponent}
+      />
+      <Stack.Screen
+        name="SectionListComponent"
+        component={SectionListComponent}
       />
     </Stack.Navigator>
   )
