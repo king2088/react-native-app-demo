@@ -24,6 +24,15 @@ import PermissionsAndroidComponent from "../homeComponents/PermissionsAndroidCom
 import ToastAndroidComponent from "../homeComponents/ToastAndroidComponent";
 import ActivityIndicatorComponent from "../homeComponents/ActivityIndicatorComponent";
 import AlertComponent from "../homeComponents/AlertComponent";
+import AnimatedComponent from "../homeComponents/AnimatedComponent";
+import DimensionsComponent from "../homeComponents/DimensionsComponent";
+import KeyboardAvoidingViewComponent from "../homeComponents/KeyboardAvoidingViewComponent";
+import LinkingComponent from "../homeComponents/LinkingComponent";
+import ModalComponent from "../homeComponents/ModalComponent";
+import PixelRatioComponent from "../homeComponents/PixelRatioComponent";
+import RefreshControlComponent from "../homeComponents/RefreshControlComponent";
+import StatusBarComponent from "../homeComponents/StatusBarComponent";
+import WebViewComponent from "../homeComponents/WebViewComponent";
 
 const Stack = createStackNavigator();  // creates object for Stack Navigator
 
@@ -135,6 +144,42 @@ export const HomeScreenNavigation = () => {
       <Stack.Screen
         name="AlertComponent"
         component={AlertComponent}
+      />
+      <Stack.Screen
+        name="AnimatedComponent"
+        component={AnimatedComponent}
+      />
+      <Stack.Screen
+        name="DimensionsComponent"
+        component={DimensionsComponent}
+      />
+      <Stack.Screen
+        name="KeyboardAvoidingViewComponent"
+        component={KeyboardAvoidingViewComponent}
+      />
+      <Stack.Screen
+        name="LinkingComponent"
+        component={LinkingComponent}
+      />
+      <Stack.Screen
+        name="ModalComponent"
+        component={ModalComponent}
+      />
+      <Stack.Screen
+        name="PixelRatioComponent"
+        component={PixelRatioComponent}
+      />
+      <Stack.Screen
+        name="RefreshControlComponent"
+        component={RefreshControlComponent}
+      />
+      <Stack.Screen
+        name="StatusBarComponent"
+        component={StatusBarComponent}
+      />
+      <Stack.Screen
+        name="WebViewComponent"
+        component={WebViewComponent}
       />
     </Stack.Navigator>
   )

@@ -6,13 +6,11 @@ const requestCameraPermission = async () => {
         const granted = await PermissionsAndroid.request(
             PermissionsAndroid.PERMISSIONS.CAMERA,
             {
-                title: "Cool Photo App Camera Permission",
-                message:
-                    "Cool Photo App needs access to your camera " +
-                    "so you can take awesome pictures.",
-                buttonNeutral: "Ask Me Later",
-                buttonNegative: "Cancel",
-                buttonPositive: "OK"
+                title: "申请摄像头权限",
+                message: "此APP需要使用摄像头权限",
+                buttonNeutral: "稍后再说",
+                buttonNegative: "关闭",
+                buttonPositive: "确定"
             }
         );
         if (granted === PermissionsAndroid.RESULTS.GRANTED) {
@@ -27,8 +25,8 @@ const requestCameraPermission = async () => {
 
 const PermissionsAndroidComponent = () => (
     <View style={styles.container}>
-        <Text style={styles.item}>Try permissions</Text>
-        <Button title="request permissions" onPress={requestCameraPermission} />
+        <Text style={styles.item}>申请权限</Text>
+        <Button title="请求摄像头权限" onPress={requestCameraPermission} />
     </View>
 );
 
