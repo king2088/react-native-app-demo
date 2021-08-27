@@ -1,17 +1,41 @@
-import React, {useState} from 'react';
-import { StyleSheet, View, Switch } from 'react-native';
+import React from 'react';
+import { StyleSheet, View, Text, SectionList } from 'react-native';
+
+const LIST_DATA = [
+    {
+        title: "Main dishes",
+        data: ["Pizza", "Burger", "Risotto"]
+    },
+    {
+        title: "Sides",
+        data: ["French Fries", "Onion Rings", "Fried Shrimps"]
+    },
+    {
+        title: "Drinks",
+        data: ["Water", "Coke", "Beer"]
+    },
+    {
+        title: "Desserts",
+        data: ["Cheese Cake", "Ice Cream"]
+    }
+];
+
+const Item = ({ title }) => (
+    <View style={styles.item}>
+        <Text style={styles.title}>{title}</Text>
+    </View>
+);
 
 const SectionListComponent = () => {
-    const [isEnabled, setIsEnabled] = useState(false);
-    const toggleSwitch = () => setIsEnabled(previousState => !previousState);
     return (
         <View style={styles.container}>
-            <Switch
-                trackColor={{ false: "yellow", true: "green" }}
-                thumbColor={isEnabled ? "red" : "blue"}
-                ios_backgroundColor="green"
-                onValueChange={toggleSwitch}
-                value={isEnabled}
+            <SectionList
+                sections={LIST_DATA}
+                keyExtractor={(item, index) => item + index}
+                renderItem={({ item }) => <Item title={item} />}
+                renderSectionHeader={({ section: { title } }) => (
+                    <Text style={styles.header}>{title}</Text>
+                )}
             />
         </View>
     );
@@ -20,10 +44,20 @@ const SectionListComponent = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: '#CCC'
+        marginHorizontal: 16
     },
-})
+    item: {
+        backgroundColor: "#f9c2ff",
+        padding: 20,
+        marginVertical: 8
+    },
+    header: {
+        fontSize: 32,
+        backgroundColor: "#fff"
+    },
+    title: {
+        fontSize: 20
+    }
+});
 
 export default SectionListComponent

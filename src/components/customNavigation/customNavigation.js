@@ -18,6 +18,12 @@ import ButtonComponent from "../homeComponents/ButtonComponent";
 import SwitchComponent from "../homeComponents/SwitchComponent";
 import FlatListComponent from "../homeComponents/FlatListComponent";
 import SectionListComponent from "../homeComponents/SectionListComponent";
+import BackHandlerComponent from "../homeComponents/BackHandlerComponent";
+import DrawerLayoutAndroidComponent from "../homeComponents/DrawerLayoutAndroidComponent";
+import PermissionsAndroidComponent from "../homeComponents/PermissionsAndroidComponent";
+import ToastAndroidComponent from "../homeComponents/ToastAndroidComponent";
+import ActivityIndicatorComponent from "../homeComponents/ActivityIndicatorComponent";
+import AlertComponent from "../homeComponents/AlertComponent";
 
 const Stack = createStackNavigator();  // creates object for Stack Navigator
 
@@ -105,6 +111,30 @@ export const HomeScreenNavigation = () => {
       <Stack.Screen
         name="SectionListComponent"
         component={SectionListComponent}
+      />
+      <Stack.Screen
+        name="BackHandlerComponent"
+        component={BackHandlerComponent}
+      />
+      <Stack.Screen
+        name="DrawerLayoutAndroidComponent"
+        component={DrawerLayoutAndroidComponent}
+      />
+      <Stack.Screen
+        name="PermissionsAndroidComponent"
+        component={PermissionsAndroidComponent}
+      />
+      <Stack.Screen
+        name="ToastAndroidComponent"
+        component={ToastAndroidComponent}
+      />
+      <Stack.Screen
+        name="ActivityIndicatorComponent"
+        component={ActivityIndicatorComponent}
+      />
+      <Stack.Screen
+        name="AlertComponent"
+        component={AlertComponent}
       />
     </Stack.Navigator>
   )

@@ -31,26 +31,26 @@ const homeList = [
     {
         title: "Android 独有组件",
         data: [
-            { title: "BackHandler", component: 'ViewComponent' },
-            { title: "DrawerLayoutAndroid", component: 'ViewComponent' },
-            { title: "PermissionsAndroid", component: 'ViewComponent' },
-            { title: "ToastAndroid", component: 'ViewComponent' }
+            { title: "BackHandler", component: 'BackHandlerComponent' },
+            { title: "DrawerLayoutAndroid", component: 'DrawerLayoutAndroidComponent' },
+            { title: "PermissionsAndroid", component: 'PermissionsAndroidComponent' },
+            { title: "ToastAndroid", component: 'ToastAndroidComponent' }
         ]
     },
     {
         title: '其他',
         data: [
-            { title: "ActivityIndicator", component: 'ViewComponent' },
-            { title: "Alert", component: 'ViewComponent' },
-            { title: "Animated", component: 'ViewComponent' },
-            { title: "Dimensions", component: 'ViewComponent' },
-            { title: "KeyboardAvoidingView", component: 'ViewComponent' },
-            { title: "Linking", component: 'ViewComponent' },
-            { title: "Modal", component: 'ViewComponent' },
-            { title: "PixelRatio", component: 'ViewComponent' },
-            { title: "RefreshControl", component: 'ViewComponent' },
-            { title: "StatusBar", component: 'ViewComponent' },
-            { title: "WebView", component: 'ViewComponent' }
+            { title: "ActivityIndicator", component: 'ActivityIndicatorComponent' },
+            { title: "Alert", component: 'AlertComponent' },
+            { title: "Animated", component: 'AnimatedComponent' },
+            { title: "Dimensions", component: 'DimensionsComponent' },
+            { title: "KeyboardAvoidingView", component: 'KeyboardAvoidingViewComponent' },
+            { title: "Linking", component: 'LinkingComponent' },
+            { title: "Modal", component: 'ModalComponent' },
+            { title: "PixelRatio", component: 'PixelRatioComponent' },
+            { title: "RefreshControl", component: 'RefreshControlComponent' },
+            { title: "StatusBar", component: 'StatusBarComponent' },
+            { title: "WebView", component: 'WebViewComponent' }
         ]
     }
 ]
