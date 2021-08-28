@@ -1,11 +1,10 @@
 import React from 'react';
-import { Text, View, Image, StyleSheet } from 'react-native';
+import ListComponent from '../../components/listComponent/listComponent';
+import apiList from '../../data/apiList';
 
-function ApiScreen() {
+function ApiScreen({navigation}) {
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text>Api!</Text>
-        </View>
+        <ListComponent navigation={navigation} data={apiList}></ListComponent>
     );
 }
 
