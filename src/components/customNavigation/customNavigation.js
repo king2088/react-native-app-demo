@@ -33,6 +33,7 @@ import PixelRatioComponent from "../homeComponents/PixelRatioComponent";
 import RefreshControlComponent from "../homeComponents/RefreshControlComponent";
 import StatusBarComponent from "../homeComponents/StatusBarComponent";
 import WebViewComponent from "../homeComponents/WebViewComponent";
+import CameraComponent from "../nativeApi/CameraComponent";
 
 const Stack = createStackNavigator();  // creates object for Stack Navigator
 
@@ -44,11 +45,11 @@ export const CustomNavigation = () => {
         component={Tabs}
         options={{ headerShown: false }}
       />
-      {/* <Stack.Screen
-        name="ViewComponent"
-        component={ViewComponent}
+      <Stack.Screen
+        name="CameraComponent"
+        component={CameraComponent}
       />
-       */}
+      
     </Stack.Navigator>
   )
 }
