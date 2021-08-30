@@ -34,6 +34,7 @@ import RefreshControlComponent from "../homeComponents/RefreshControlComponent";
 import StatusBarComponent from "../homeComponents/StatusBarComponent";
 import WebViewComponent from "../homeComponents/WebViewComponent";
 import CameraComponent from "../nativeApi/CameraComponent";
+import ShowBase64Image from "../nativeApi/showBase64Image";
 
 const Stack = createStackNavigator();  // creates object for Stack Navigator
 
@@ -49,7 +50,10 @@ export const CustomNavigation = () => {
         name="CameraComponent"
         component={CameraComponent}
       />
-      
+      <Stack.Screen
+        name="ShowBase64Image"
+        component={ShowBase64Image}
+      />
     </Stack.Navigator>
   )
 }
