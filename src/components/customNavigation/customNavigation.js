@@ -33,9 +33,9 @@ import PixelRatioComponent from "../homeComponents/PixelRatioComponent";
 import RefreshControlComponent from "../homeComponents/RefreshControlComponent";
 import StatusBarComponent from "../homeComponents/StatusBarComponent";
 import WebViewComponent from "../homeComponents/WebViewComponent";
-import CameraComponent from "../nativeApi/CameraComponent";
+import CameraApi from "../nativeApi/CameraApi";
 import ShowBase64Image from "../nativeApi/showBase64Image";
-import VibrationComponent from "../nativeApi/VibrationComponent";
+import VibrationApi from "../nativeApi/VibrationApi";
 
 const Stack = createStackNavigator();  // creates object for Stack Navigator
 
@@ -46,7 +46,8 @@ const screenOptionss = ({ route }) => {
       const title = getHeaderTitle(options, route.name);
       const canGoBack = navigation.canGoBack()
       let height = 1
-      return <Header title={title.indexOf('Component') > -1 ? '组件' : title} canGoBack={canGoBack} height={height} navigation={navigation} route={route} />;
+      const _title = title.indexOf('Component') > -1 ? '组件' : title.indexOf('Api') > -1 ? '原生API' : title
+      return <Header title={_title} canGoBack={canGoBack} height={height} navigation={navigation} route={route} />;
     },
     cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS
   }
@@ -61,16 +62,17 @@ export const CustomNavigation = () => {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="CameraComponent"
-        component={CameraComponent}
+        name="CameraApi"
+        component={CameraApi}
       />
       <Stack.Screen
         name="ShowBase64Image"
         component={ShowBase64Image}
+        options={{ title: "图片" }}
       />
       <Stack.Screen
-        name="VibrationComponent"
-        component={VibrationComponent}
+        name="VibrationApi"
+        component={VibrationApi}
       />
     </Stack.Navigator>
   )

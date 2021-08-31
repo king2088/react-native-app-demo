@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import ListComponent from '../../components/listComponent/listComponent';
 import apiList from '../../data/apiList';
 

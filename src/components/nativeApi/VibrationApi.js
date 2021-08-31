@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View, SafeAreaView, Text, Vibration, Button } from "react-native";
 
-const VibrationComponent = () => {
+const VibrationApi = () => {
     const Separator = () => {
         return <View style={Platform.OS === 'android' ? styles.separator : null} />;
     };
@@ -62,4 +62,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default VibrationComponent
+export default VibrationApi
