@@ -65,5 +65,5 @@ const styles = StyleSheet.create({
         margin: 20,
     },
 });
-// AppRegistry.registerComponent('App', () => CameraComponent);
+
 export default CameraComponent

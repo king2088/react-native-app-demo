@@ -35,12 +35,26 @@ import StatusBarComponent from "../homeComponents/StatusBarComponent";
 import WebViewComponent from "../homeComponents/WebViewComponent";
 import CameraComponent from "../nativeApi/CameraComponent";
 import ShowBase64Image from "../nativeApi/showBase64Image";
+import VibrationComponent from "../nativeApi/VibrationComponent";
 
 const Stack = createStackNavigator();  // creates object for Stack Navigator
 
+const screenOptionss = ({ route }) => {
+  return {
+    // header部分
+    header: ({ navigation, route, options }) => {
+      const title = getHeaderTitle(options, route.name);
+      const canGoBack = navigation.canGoBack()
+      let height = 1
+      return <Header title={title.indexOf('Component') > -1 ? '组件' : title} canGoBack={canGoBack} height={height} navigation={navigation} route={route} />;
+    },
+    cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS
+  }
+}
+
 export const CustomNavigation = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={screenOptionss}>
       <Stack.Screen
         name="Tabs"
         component={Tabs}
@@ -54,23 +68,15 @@ export const CustomNavigation = () => {
         name="ShowBase64Image"
         component={ShowBase64Image}
       />
+      <Stack.Screen
+        name="VibrationComponent"
+        component={VibrationComponent}
+      />
     </Stack.Navigator>
   )
 }
 
 export const HomeScreenNavigation = () => {
-  const screenOptionss = ({ route }) => {
-    return {
-      // header部分
-      header: ({ navigation, route, options }) => {
-        const title = getHeaderTitle(options, route.name);
-        const canGoBack = navigation.canGoBack()
-        let height = 1
-        return <Header title={title.indexOf('Component') > -1 ? '组件' : title} canGoBack={canGoBack} height={height} navigation={navigation} route={route} />;
-      },
-      cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS
-    }
-  }
   return (
     <Stack.Navigator screenOptions={screenOptionss}>
       <Stack.Screen
