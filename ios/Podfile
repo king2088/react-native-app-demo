@@ -20,6 +20,8 @@ target 'RnApp' do
 
   pod 'react-native-jw-media-player', :path => '../node_modules/react-native-jw-media-player'
 
+  pod 'RNIndicator', :path => '../node_modules/react-native-rn-videoplayer'
+
   target 'RnAppTests' do
     inherit! :complete
     # Pods for testing

@@ -212,6 +212,11 @@ dependencies {
     compile project(':react-native-vector-icons')
     implementation project(':react-native-camera')
     implementation project(':react-native-device-info')
+    implementation project(':react-native-svg')
+    implementation project(':react-native-linear-gradient')
+    implementation project(':react-native-orientation-locker')
+    implementation project(':react-native-system-setting')
+    implementation project(':react-native-video')
 }
 
 // Run this once to be able to run the application with BUCK

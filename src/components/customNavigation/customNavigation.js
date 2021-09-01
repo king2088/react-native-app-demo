@@ -37,6 +37,7 @@ import CameraApi from "../nativeApi/CameraApi";
 import ShowBase64Image from "../nativeApi/showBase64Image";
 import VibrationApi from "../nativeApi/VibrationApi";
 import DeviceInfoApi from "../nativeApi/DeviceInfoApi";
+import PlayerApi from "../nativeApi/PlayerApi";
 
 const Stack = createStackNavigator();  // creates object for Stack Navigator
 
@@ -65,6 +66,7 @@ export const CustomNavigation = () => {
       <Stack.Screen
         name="CameraApi"
         component={CameraApi}
+        options={{ title: '摄像头' }}
       />
       <Stack.Screen
         name="ShowBase64Image"
@@ -74,10 +76,17 @@ export const CustomNavigation = () => {
       <Stack.Screen
         name="VibrationApi"
         component={VibrationApi}
+        options={{ title: '震动' }}
       />
       <Stack.Screen
         name="DeviceInfoApi"
         component={DeviceInfoApi}
+        options={{ title: '设备信息' }}
+      />
+      <Stack.Screen
+        name="PlayerApi"
+        component={PlayerApi}
+        options={{ title: '播放器', headerShown: false }}
       />
     </Stack.Navigator>
   )
