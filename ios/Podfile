@@ -22,6 +22,8 @@ target 'RnApp' do
 
   pod 'RNIndicator', :path => '../node_modules/react-native-rn-videoplayer'
 
+  pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
+
   target 'RnAppTests' do
     inherit! :complete
     # Pods for testing

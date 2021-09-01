@@ -217,6 +217,7 @@ dependencies {
     implementation project(':react-native-orientation-locker')
     implementation project(':react-native-system-setting')
     implementation project(':react-native-video')
+    implementation project (":react-native-image-picker")
 }
 
 // Run this once to be able to run the application with BUCK
