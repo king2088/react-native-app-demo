@@ -39,6 +39,7 @@ import VibrationApi from "../nativeApi/VibrationApi";
 import DeviceInfoApi from "../nativeApi/DeviceInfoApi";
 import PlayerApi from "../nativeApi/PlayerApi";
 import ImagePickerApi from "../nativeApi/ImagePickerApi";
+import LocationApi from "../nativeApi/LocationApi";
 
 const Stack = createStackNavigator();  // creates object for Stack Navigator
 
@@ -93,6 +94,11 @@ export const CustomNavigation = () => {
         name="ImagePickerApi"
         component={ImagePickerApi}
         options={{ title: '图片选择器' }}
+      />
+      <Stack.Screen
+        name="LocationApi"
+        component={LocationApi}
+        options={{ title: '地理位置' }}
       />
     </Stack.Navigator>
   )
