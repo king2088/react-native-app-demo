@@ -16,6 +16,10 @@ target 'RnApp' do
 
   pod 'react-native-camera', :path => '../node_modules/react-native-camera'
 
+  pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
+
+  pod 'react-native-jw-media-player', :path => '../node_modules/react-native-jw-media-player'
+
   target 'RnAppTests' do
     inherit! :complete
     # Pods for testing

@@ -36,6 +36,7 @@ import WebViewComponent from "../homeComponents/WebViewComponent";
 import CameraApi from "../nativeApi/CameraApi";
 import ShowBase64Image from "../nativeApi/showBase64Image";
 import VibrationApi from "../nativeApi/VibrationApi";
+import DeviceInfoApi from "../nativeApi/DeviceInfoApi";
 
 const Stack = createStackNavigator();  // creates object for Stack Navigator
 
@@ -73,6 +74,10 @@ export const CustomNavigation = () => {
       <Stack.Screen
         name="VibrationApi"
         component={VibrationApi}
+      />
+      <Stack.Screen
+        name="DeviceInfoApi"
+        component={DeviceInfoApi}
       />
     </Stack.Navigator>
   )
