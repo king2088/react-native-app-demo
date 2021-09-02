@@ -26,6 +26,10 @@ target 'RnApp' do
 
   pod 'react-native-geolocation-service', :path => '../node_modules/react-native-geolocation-service'
 
+  pod 'react-native-network-info', :path => '../node_modules/react-native-network-info'
+
+  pod 'RNSqlite2', :path => '../node_modules/react-native-sqlite-2'
+
   target 'RnAppTests' do
     inherit! :complete
     # Pods for testing

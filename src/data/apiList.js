@@ -8,6 +8,7 @@ const apiList = [
             { title: "视频播放器", component: 'PlayerApi' },
             { title: "图像选择器", component: 'ImagePickerApi' },
             { title: "地理位置", component: 'LocationApi' },
+            { title: "网络信息", component: 'NetWorkApi' },
         ]
     }
 ]

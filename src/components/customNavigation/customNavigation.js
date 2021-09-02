@@ -40,6 +40,7 @@ import DeviceInfoApi from "../nativeApi/DeviceInfoApi";
 import PlayerApi from "../nativeApi/PlayerApi";
 import ImagePickerApi from "../nativeApi/ImagePickerApi";
 import LocationApi from "../nativeApi/LocationApi";
+import NetWorkApi from "../nativeApi/NetWorkApi";
 
 const Stack = createStackNavigator();  // creates object for Stack Navigator
 
@@ -99,6 +100,11 @@ export const CustomNavigation = () => {
         name="LocationApi"
         component={LocationApi}
         options={{ title: '地理位置' }}
+      />
+      <Stack.Screen
+        name="NetWorkApi"
+        component={NetWorkApi}
+        options={{ title: '网络信息' }}
       />
     </Stack.Navigator>
   )
