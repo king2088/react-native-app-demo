@@ -18,8 +18,6 @@ target 'RnApp' do
 
   pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
 
-  pod 'react-native-jw-media-player', :path => '../node_modules/react-native-jw-media-player'
-
   pod 'RNIndicator', :path => '../node_modules/react-native-rn-videoplayer'
 
   pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
@@ -27,8 +25,6 @@ target 'RnApp' do
   pod 'react-native-geolocation-service', :path => '../node_modules/react-native-geolocation-service'
 
   pod 'react-native-network-info', :path => '../node_modules/react-native-network-info'
-
-  pod 'RNSqlite2', :path => '../node_modules/react-native-sqlite-2'
 
   target 'RnAppTests' do
     inherit! :complete
